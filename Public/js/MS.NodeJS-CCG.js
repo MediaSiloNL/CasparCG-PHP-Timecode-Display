@@ -13,7 +13,8 @@ socket.on('connect',function() {
 
 // SIO || DISCONNECT
 socket.on('disconnect',function() {
-  console.log('Disconnected to NodeJS Server');    
+  console.log('Disconnected to NodeJS Server');
+  clearData();
 });
 
 // SIO || TIMING RECIEVED
@@ -21,11 +22,7 @@ socket.on('timing',function(timingReceived) {
 
   // CLEAR WHEN NO VIDEO IS PRESENT ON CHANNEL
   if(timingReceived.videoPresent == false){
-    $('#infobox #current h1').html('00:00:00:00');
-    $('#infobox #duration h1').html('00:00:00:00');
-    $('#infobox #remaining h1').html('00:00:00:00');
-    $('#infobox #progress').attr('aria-valuenow', '0');
-    $('#infobox #progress').css("width", '0%');
+    clearData();
   }
   else{
     // UPDATE TEXT
@@ -38,6 +35,15 @@ socket.on('timing',function(timingReceived) {
     $('#infobox #progress').css("width", timingReceived.currentProgressPrecent + '%');
   }  
 });
+
+// Clear Data
+function clearData(){
+  $('#infobox #current h1').html('00:00:00:00');
+  $('#infobox #duration h1').html('00:00:00:00');
+  $('#infobox #remaining h1').html('00:00:00:00');
+  $('#infobox #progress').attr('aria-valuenow', '0');
+  $('#infobox #progress').css("width", '0%');
+}
 
 // UI Action Click
 $(document).on('click', '#infobox #uiAction', function(e){

@@ -8,24 +8,39 @@ Because I didn't want to have program a C# or VB client and for every client to 
 ## Installation:
 - Place the files from the "NodeJS" folder on the CasparCG in a folder which you can access from NodeJS
 - Place or upload the files from the "Public" on your webserver (I'm running WAMP on the same server as CasparCG)
-- Change NodeJS Server settings to your settings in: "ccg_node_socket.server.js"
-- Change Client settings to your settings in: "Public/js/ms.ccg_node_socket.main.js"
-- Start NodeJS Application/Server
+- Change NodeJS Server settings to your settings in: "CCG.SocketIO.Config.js"
+- Change Client settings to your settings in: "Public/js/MS.NodeJS-CCG.js"
+- Start NodeJS Application/Server (node CCG.SocketIO.Server.js)
 - Go to index.php
-- Voila!!
+- Voila!! Start media by pressing "Play"
+
+## Updates:
+- Completely reworked the server application
+- Compatibility with the newest CasparCG releases (OSC has been changed)
+- Updated all packages to the latest version
+- Updated to Bootstrap 4.3.1
+- Added Font Awesome for the web display
+- Added media controls to to web display
+- Reworked timing (different sorts of timing deliverance via SocketIO)
+- Fixed timing display. (clears when disconnected or playing has stopped)
 
 ## Minimal Requirements
-- Windows 7 / Linux Server with a running instance of CasparCG
+- Windows 7 / Linux Server with a running instance of CasparCG (I'm using Windows 10 + CasparCG Server 2.2)
 - NodeJS installed on mentioned server
 - Webserver or WAMP installation
 
 ## Node installation
 - NodeJS needs to be fully installed.
 - "ccg_node_socket.server.js" is the actual app but it needs the following dependencies (included in the NodeJS folder):
-- "express": "~4.14.0"
-- "socket.io": "^1.7.2"
-- "caspar-cg": "0.1.0"
-- "body-parser": "~1.15.2"
+- "casparcg-connection": "^4.6.1"
+- "dgram": "^1.0.1"
+- "express": "^4.16.4"
+- "osc-min": "^1.1.1"
+- "request": "^2.88.0"
+- "socket.io": "^2.2.0"
+- "terminal-kit": "^1.27.0"
+- "timexe": "^0.9.13"
+- "tslib": "^1.9.3"
 
 - Package.Json is included if you want to install it yourself
 
