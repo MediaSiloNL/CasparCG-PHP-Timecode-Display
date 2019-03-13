@@ -1,11 +1,38 @@
 {
-  "name": "ms-ccg-node-socket",
-  "version": "0.0.2",
-  "private": true,
+  "name": "ccg_node_socket.server.js",
+  "version": "0.1.4",
+  "description": "This tool displays the timecode of a clip currently running on a predefined channel and layer on a CasparCG Server using Node and Socket.io",
+  "main": "ccg_node_socket.server.js",
   "dependencies": {
-    "express": "~4.14.0",
-    "socket.io": "^1.7.2",
-    "caspar-cg": "0.1.0",
-    "body-parser": "~1.15.2"
-  }
+    "casparcg-connection": "^4.6.1",
+    "dgram": "^1.0.1",
+    "express": "^4.16.4",
+    "osc-min": "^1.1.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0",
+    "terminal-kit": "^1.27.0",
+    "timexe": "^0.9.13",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MediaSiloNL/CasparCG-PHP-Timecode-Display.git"
+  },
+  "keywords": [
+    "PHP",
+    "NodeJS",
+    "CasparCG",
+    "Playout",
+    "Timecode"
+  ],
+  "author": "Jordi Floor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MediaSiloNL/CasparCG-PHP-Timecode-Display/issues"
+  },
+  "homepage": "https://github.com/MediaSiloNL/CasparCG-PHP-Timecode-Display#readme"
 }
